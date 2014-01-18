@@ -1,6 +1,6 @@
 Rails.configuration.middleware.use RailsWarden::Manager do |manager|
   manager.default_strategies :password
-  manager.failure_app = SessionController
+  manager.failure_app = SessionsController
 end
 
 # Setup Session Serialization
@@ -11,7 +11,7 @@ class Warden::SessionSerializer
 
   def deserialize(keys)
     klass, id = keys
-    klass.find(:first, :conditions => { :id => id })
+    klass.constantize.find(:first, :conditions => { :id => id })
   end
 end
 

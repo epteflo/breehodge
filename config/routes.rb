@@ -53,4 +53,8 @@ Breehodge::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root to:"users#index"
+
+  get 'login', to: 'sessions#new', as: :login
+  resources :sessions, only: [:create]
 end

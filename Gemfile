@@ -45,3 +45,4 @@ end
 
 gem 'rails_warden'
 gem 'bcrypt-ruby'
+gem 'haml-rails'

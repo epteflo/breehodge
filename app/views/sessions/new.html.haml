@@ -1,0 +1,10 @@
+=form_tag sessions_path do
+  - if flash[:error]
+    = auth_failure_message flash[:error]
+  %label
+    Felhasználónév
+  =text_field_tag "username", nil, autofocus: 'autofocus'
+  %label
+    Jelszó
+  =password_field_tag "password", nil
+  =submit_tag "Bejelentkezés"
